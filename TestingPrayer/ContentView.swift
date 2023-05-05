@@ -6,59 +6,20 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
-    var body: some View {
-        PrayerTimesView()
-    }
-}
+    @ObservedObject var apiHandler = APIHandler()
+    @State var location: String = ""
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
-struct PrayerTimings: Codable {
-    let data: [Data]
-    
-}
-
-struct Data: Codable {
-    
-    let timings: Timings
-    let date: Dates
-}
-
-struct Dates: Codable {
-    let readable: String
-    
-}
-
-struct Timings: Codable {
-    let Fajr: String
-    let Sunrise: String
-    let Dhuhr: String
-    let Asr: String
-    let Maghrib: String
-    let Isha: String
-    
-}
-
-
-let calendar = Calendar.current
-let currentDate = Date()
-var currentDay: Int = calendar.component(.day, from: currentDate)
-var currentMonth: Int = calendar.component(.month, from: currentDate)
-var dayPointer: Int = currentDay-1
-var monthPointer: Int = currentMonth-1
-
-struct PrayerTimesView: View {
-    @State private var prayerTimings: PrayerTimings?
-    
     var body: some View {
         VStack {
-            if let prayerTimings = prayerTimings {
+            TextField("Enter location", text: $location, onCommit: {
+                apiHandler.fetchPrayerTimings(for: location)
+            })
+            .padding()
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            if let prayerTimings = apiHandler.prayerTimings {
                 Text("Date: \(prayerTimings.data[dayPointer].date.readable)")
                 Text("Fajr: \(prayerTimings.data[dayPointer].timings.Fajr)")
                 Text("Sunrise: \(prayerTimings.data[dayPointer].timings.Sunrise)")
@@ -72,37 +33,31 @@ struct PrayerTimesView: View {
                 Text("Loading...")
             }
         }
-        .onAppear(perform: fetchPrayerTimings)
     }
     
-    func fetchPrayerTimings() {
-        let url = URL(string: "https://api.aladhan.com/v1/calendarByCity/2023/5?city=Montreal&country=Canada&method=0")!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data {
-                do {
-                    let decodedResponse = try JSONDecoder().decode(PrayerTimings.self, from: data)
-                    DispatchQueue.main.async {
-                        self.prayerTimings = decodedResponse
-                    }
-                } catch {
-                    print("Error decoding JSON: \(error.localizedDescription)")
-                }
-            } else if let error = error {
-                print("Error fetching data: \(error.localizedDescription)")
-            }
-        }.resume()
-    }
 }
 
-struct PrayerTimesView_Previews: PreviewProvider {
+
+
+//struct PrayerTimesView: View {
+//
+//}
+
+//struct PrayerTimesView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PrayerTimesView()
+//    }
+//}
+
+
+
+
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        PrayerTimesView()
+        ContentView()
     }
 }
 
-
-
-//testing push
 
 
 
