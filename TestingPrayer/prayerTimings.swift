@@ -33,7 +33,7 @@ struct Timings: Codable {
     
 }
 
-//other variables
+//other global variables
 
 
 let calendar = Calendar.current

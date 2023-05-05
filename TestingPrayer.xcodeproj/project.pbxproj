@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F82CFFE2A057D1F00E45C90 /* PrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82CFFD2A057D1F00E45C90 /* PrayerTimesView.swift */; };
 		2F8C60D42A031F1900CC2015 /* TestingPrayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8C60D32A031F1900CC2015 /* TestingPrayerApp.swift */; };
 		2F8C60D62A031F1900CC2015 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8C60D52A031F1900CC2015 /* ContentView.swift */; };
 		2F8C60D82A031F1B00CC2015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F8C60D72A031F1B00CC2015 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 		2F8C60E52A031F1B00CC2015 /* TestingPrayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8C60E42A031F1B00CC2015 /* TestingPrayerTests.swift */; };
 		2F8C60EF2A031F1B00CC2015 /* TestingPrayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8C60EE2A031F1B00CC2015 /* TestingPrayerUITests.swift */; };
 		2F8C60F12A031F1B00CC2015 /* TestingPrayerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8C60F02A031F1B00CC2015 /* TestingPrayerUITestsLaunchTests.swift */; };
+		2FA589452A05B8C000B4B902 /* LocationSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA589442A05B8C000B4B902 /* LocationSelect.swift */; };
 		2FF12BD82A04348C0063CE21 /* PrayerTimings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF12BD72A04348C0063CE21 /* PrayerTimings.swift */; };
 		2FF12BDA2A0439320063CE21 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF12BD92A0439320063CE21 /* APIHandler.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F82CFFD2A057D1F00E45C90 /* PrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesView.swift; sourceTree = "<group>"; };
 		2F8C60D02A031F1900CC2015 /* TestingPrayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingPrayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8C60D32A031F1900CC2015 /* TestingPrayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingPrayerApp.swift; sourceTree = "<group>"; };
 		2F8C60D52A031F1900CC2015 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		2F8C60EA2A031F1B00CC2015 /* TestingPrayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingPrayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8C60EE2A031F1B00CC2015 /* TestingPrayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingPrayerUITests.swift; sourceTree = "<group>"; };
 		2F8C60F02A031F1B00CC2015 /* TestingPrayerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingPrayerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2FA589442A05B8C000B4B902 /* LocationSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelect.swift; sourceTree = "<group>"; };
 		2FF12BD72A04348C0063CE21 /* PrayerTimings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimings.swift; sourceTree = "<group>"; };
 		2FF12BD92A0439320063CE21 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,11 +103,13 @@
 			isa = PBXGroup;
 			children = (
 				2F8C60D32A031F1900CC2015 /* TestingPrayerApp.swift */,
-				2F8C60D52A031F1900CC2015 /* ContentView.swift */,
 				2F8C60D72A031F1B00CC2015 /* Assets.xcassets */,
-				2F8C60D92A031F1B00CC2015 /* Preview Content */,
+				2F8C60D52A031F1900CC2015 /* ContentView.swift */,
+				2F82CFFD2A057D1F00E45C90 /* PrayerTimesView.swift */,
 				2FF12BD72A04348C0063CE21 /* PrayerTimings.swift */,
 				2FF12BD92A0439320063CE21 /* APIHandler.swift */,
+				2FA589442A05B8C000B4B902 /* LocationSelect.swift */,
+				2F8C60D92A031F1B00CC2015 /* Preview Content */,
 			);
 			path = TestingPrayer;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 			files = (
 				2F8C60D62A031F1900CC2015 /* ContentView.swift in Sources */,
 				2FF12BD82A04348C0063CE21 /* PrayerTimings.swift in Sources */,
+				2FA589452A05B8C000B4B902 /* LocationSelect.swift in Sources */,
+				2F82CFFE2A057D1F00E45C90 /* PrayerTimesView.swift in Sources */,
 				2F8C60D42A031F1900CC2015 /* TestingPrayerApp.swift in Sources */,
 				2FF12BDA2A0439320063CE21 /* APIHandler.swift in Sources */,
 			);
